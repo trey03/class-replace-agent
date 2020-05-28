@@ -5,6 +5,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class Config {
 
+    public static String scan = null;
+
     /**
      * supperClass -> subClass
      */
@@ -12,7 +14,11 @@ public abstract class Config {
 
     static {
         //可以从外部读取 ATest为父类 BTest为子类
-        classMap.put("com.itrey.ATest","com.itrey.BTest");
+        //classMap.put("com.itrey.ATest","com.itrey.BTest");
+    }
+
+    public static void addReplace(String supperClass,String subClass){
+        classMap.put(supperClass,subClass);
     }
 
     /**
